@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Dinâmico</title>
+</head>
+<body>
+    <article id="post">
+        <h1>Javascript</h1>
+        <img src="javascript.png" alt="javascript" />
+        </br>
+        <input id="trocar-imagem" type="button" value="Trocar imagem" />
+        <p id="par1">
+        Daria é uma série de animação americana criada por Glenn Eichler e Susie Lewis Lynn para a MTV. A série enfoca Daria Morgendorffer, uma adolescente inteligente, amarga, e um tanto misantropa que observa o mundo ao seu redor. A história se passa na fictícia cidade americana suburbana de Lawndale, e é uma sátira da vida de colegial, cheia de alusões e críticas da cultura popular e classes sociais.
+        </p>
+    </article>
+    <script>
+        var paragrafo = document.querySelector('#par1');
+        console.log(paragrafo.innerHTML);
+
+        paragrafo.innerHTML = "Aqui eu alterei no JS, mas é um texto sobre a Daria, ok?!";
+
+        paragrafo.style.color = "#f00";
+        paragrafo.style.fontSize = "40px";
+
+
+        var imagem = document.querySelector('img');
+        imagem.style.maxWidth = '500px';
+
+        var botao = document.querySelector('#trocar-imagem')
+
+        var trocarImagem = function trocarImagem(){
+            imagem.src = "javascript2.png";
+
+            if(imagem.src === "javascript2.png" ){
+                imagem.src != "javascript.png"
+            }else{
+                imagem.src = "javascript2.png"
+            }
+        };
+
+        botao.addEventListener('click', trocarImagem);
+    </script>
+</body>
+</html>
